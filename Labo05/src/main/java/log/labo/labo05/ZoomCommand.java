@@ -1,5 +1,7 @@
 package log.labo.labo05;
 
+import log.labo.labo05.Models.ViewPort;
+
 public class ZoomCommand implements Commande {
     private ViewPort viewPort;
     private double scalePrecedent, newScale;

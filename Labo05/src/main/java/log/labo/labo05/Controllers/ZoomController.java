@@ -1,7 +1,10 @@
-package log.labo.labo05;
+package log.labo.labo05.Controllers;
 import javafx.animation.PauseTransition;
 import javafx.scene.input.ScrollEvent;
 import javafx.util.Duration;
+import log.labo.labo05.CommandManager;
+import log.labo.labo05.Models.ViewPort;
+import log.labo.labo05.ZoomCommand;
 
 public class ZoomController {
     private ViewPort viewPort;

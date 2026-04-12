@@ -1,5 +1,8 @@
-package log.labo.labo05;
+package log.labo.labo05.Controllers;
 import javafx.scene.input.MouseEvent;
+import log.labo.labo05.CommandManager;
+import log.labo.labo05.TranslationCommand;
+import log.labo.labo05.Models.ViewPort;
 
 public class TranslationController {
     private ViewPort viewPort;

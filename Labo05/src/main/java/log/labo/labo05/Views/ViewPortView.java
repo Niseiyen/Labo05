@@ -1,4 +1,4 @@
-package log.labo.labo05;
+package log.labo.labo05.Views;
 
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -8,6 +8,11 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.layout.VBox;
+import log.labo.labo05.*;
+import log.labo.labo05.Controllers.TranslationController;
+import log.labo.labo05.Controllers.ZoomController;
+import log.labo.labo05.Models.ImageModel;
+import log.labo.labo05.Models.ViewPort;
 
 public class ViewPortView extends VBox implements ImageObserver, ViewPortObserver {
     private Canvas canvas;

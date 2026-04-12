@@ -7,12 +7,17 @@ import javafx.scene.control.*;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
+import log.labo.labo05.Models.ImageModel;
+import log.labo.labo05.Models.ViewPort;
+import log.labo.labo05.Views.ThumbnailView;
+import log.labo.labo05.Views.ViewPortView;
+
 import java.io.*;
 
 public class Main extends Application {
     private ImageModel imageModel = new ImageModel();
-    private ViewPort viewPort1 = new ViewPort("Perspective A");
-    private ViewPort viewPort2 = new ViewPort("Perspective B");
+    private ViewPort viewPort1 = new ViewPort("Viewport A");
+    private ViewPort viewPort2 = new ViewPort("Viewport B");
 
     @Override
     public void start(Stage stage) {
@@ -60,13 +65,13 @@ public class Main extends Application {
     private void charger() {
         try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("image.ser"))) {
             imageModel.setImagePath((String) ois.readObject());
-            ViewPort s1 = (ViewPort) ois.readObject();
-            ViewPort s2 = (ViewPort) ois.readObject();
+            ViewPort viewPortSauvegarde1 = (ViewPort) ois.readObject();
+            ViewPort viewPortSauvegarde2 = (ViewPort) ois.readObject();
 
-            viewPort1.setTranslation(s1.getTranslateX(), s1.getTranslateY());
-            viewPort1.setScale(s1.getScale());
-            viewPort2.setTranslation(s2.getTranslateX(), s2.getTranslateY());
-            viewPort2.setScale(s2.getScale());
+            viewPort1.setTranslation(viewPortSauvegarde1.getTranslateX(), viewPortSauvegarde1.getTranslateY());
+            viewPort1.setScale(viewPortSauvegarde1.getScale());
+            viewPort2.setTranslation(viewPortSauvegarde2.getTranslateX(), viewPortSauvegarde2.getTranslateY());
+            viewPort2.setScale(viewPortSauvegarde2.getScale());
             showAlert("Succès", "L'état a été restauré.");
         } catch (Exception e) { showAlert("Erreur", "Aucun fichier de sauvegarde trouvé."); }
     }

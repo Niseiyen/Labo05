@@ -1,4 +1,4 @@
-package log.labo.labo05;
+package log.labo.labo05.Views;
 
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -8,6 +8,9 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.layout.VBox;
 import javafx.stage.FileChooser;
+import log.labo.labo05.Models.ImageModel;
+import log.labo.labo05.ImageObserver;
+
 import java.io.File;
 
 public class ThumbnailView extends VBox implements ImageObserver {

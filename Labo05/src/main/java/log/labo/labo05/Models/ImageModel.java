@@ -1,4 +1,6 @@
-package log.labo.labo05;
+package log.labo.labo05.Models;
+import log.labo.labo05.ImageObserver;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
