@@ -22,12 +22,10 @@ public class ViewPortView extends VBox implements ImageObserver, ViewPortObserve
         this.setStyle("-fx-border-color: #3498db; -fx-border-radius: 5; -fx-border-width: 2; -fx-background-color: white;");
 
         Label title = new Label("Perspective : " + vp.getViewID());
-        title.setStyle("-fx-font-weight: bold; -fx-font-size: 14px;");
 
         this.canvas = new Canvas(320, 320);
 
         Button btnUndo = new Button("↩ Annuler (Undo)");
-        btnUndo.setStyle("-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-font-weight: bold;");
         btnUndo.setOnAction(e -> CommandManager.getInstance().retour(vp.getViewID()));
 
         this.getChildren().addAll(title, canvas, btnUndo);

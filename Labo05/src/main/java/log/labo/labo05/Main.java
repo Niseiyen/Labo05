@@ -49,7 +49,7 @@ public class Main extends Application {
     }
 
     private void sauvegarder() {
-        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("session.ser"))) {
+        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("image.ser"))) {
             oos.writeObject(imageModel.getImagePath());
             oos.writeObject(viewPort1);
             oos.writeObject(viewPort2);
@@ -58,7 +58,7 @@ public class Main extends Application {
     }
 
     private void charger() {
-        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("session.ser"))) {
+        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("image.ser"))) {
             imageModel.setImagePath((String) ois.readObject());
             ViewPort s1 = (ViewPort) ois.readObject();
             ViewPort s2 = (ViewPort) ois.readObject();

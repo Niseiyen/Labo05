@@ -12,10 +12,8 @@ import java.io.File;
 
 public class ThumbnailView extends VBox implements ImageObserver {
     private Canvas canvas;
-    private ImageModel model;
 
     public ThumbnailView(ImageModel model) {
-        this.model = model;
         this.setSpacing(10);
         this.setPadding(new Insets(15));
         this.setAlignment(Pos.TOP_CENTER);

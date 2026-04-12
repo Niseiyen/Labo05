@@ -5,8 +5,7 @@ import java.util.List;
 
 public class ViewPort implements Serializable {
     private double scale = 1.0;
-    private double translationX = 0;
-    private double translationY = 0;
+    private double translationX, translationY = 0;
     private final String viewID;
     private transient List<ViewPortObserver> observers = new ArrayList<>();
 
