@@ -22,24 +22,24 @@ public class ThumbnailView extends VBox implements ImageObserver {
 
         this.canvas = new Canvas(150, 150);
 
-        Button btnLoad = new Button("Charger Image");
-        btnLoad.setPrefWidth(150);
-        btnLoad.setOnAction(e -> {
+        Button buttonCharger = new Button("Charger Image");
+        buttonCharger.setPrefWidth(150);
+        buttonCharger.setOnAction(e -> {
             FileChooser fc = new FileChooser();
             File f = fc.showOpenDialog(null);
             if (f != null) model.setImagePath(f.getAbsolutePath());
         });
 
-        this.getChildren().addAll(title, canvas, btnLoad);
+        this.getChildren().addAll(title, canvas, buttonCharger);
         model.addObserver(this);
     }
 
     @Override
     public void onImageChange(ImageModel model) {
         if (model.getImagePath() != null) {
-            Image img = new Image("file:" + model.getImagePath());
+            Image image = new Image("file:" + model.getImagePath());
             canvas.getGraphicsContext2D().clearRect(0, 0, 150, 150);
-            canvas.getGraphicsContext2D().drawImage(img, 0, 0, 150, 150);
+            canvas.getGraphicsContext2D().drawImage(image, 0, 0, 150, 150);
         }
     }
 }

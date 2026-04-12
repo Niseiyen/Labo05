@@ -25,21 +25,21 @@ public class ViewPortView extends VBox implements ImageObserver, ViewPortObserve
 
         this.canvas = new Canvas(320, 320);
 
-        Button btnUndo = new Button("↩ Annuler (Undo)");
-        btnUndo.setOnAction(e -> CommandManager.getInstance().retour(vp.getViewID()));
+        Button buttonUndo = new Button("↩ Annuler (Undo)");
+        buttonUndo.setOnAction(e -> CommandManager.getInstance().retour(vp.getViewID()));
 
-        this.getChildren().addAll(title, canvas, btnUndo);
+        this.getChildren().addAll(title, canvas, buttonUndo);
 
         model.addObserver(this);
         vp.addObserver(this);
 
-        TranslationController tCtrl = new TranslationController(vp);
-        ZoomController zCtrl = new ZoomController(vp);
+        TranslationController translationController = new TranslationController(vp);
+        ZoomController zoomController = new ZoomController(vp);
 
-        canvas.setOnMousePressed(tCtrl::handleMousePressed);
-        canvas.setOnMouseDragged(tCtrl::handleMouseDragged);
-        canvas.setOnMouseReleased(tCtrl::handleMouseReleased);
-        canvas.setOnScroll(zCtrl::handleScroll);
+        canvas.setOnMousePressed(translationController::handleMousePressed);
+        canvas.setOnMouseDragged(translationController::handleMouseDragged);
+        canvas.setOnMouseReleased(translationController::handleMouseReleased);
+        canvas.setOnScroll(zoomController::handleScroll);
     }
 
     @Override public void onImageChange(ImageModel model) {

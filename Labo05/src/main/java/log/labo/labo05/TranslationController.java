@@ -14,9 +14,9 @@ public class TranslationController {
     }
 
     public void handleMouseDragged(MouseEvent e) {
-        double dx = e.getX() - lastX;
-        double dy = e.getY() - lastY;
-        viewPort.setTranslation(viewPort.getTranslateX() + dx, viewPort.getTranslateY() + dy);
+        double valueX = e.getX() - lastX;
+        double valueY = e.getY() - lastY;
+        viewPort.setTranslation(viewPort.getTranslateX() + valueX, viewPort.getTranslateY() + valueY);
         lastX = e.getX(); lastY = e.getY();
     }
 
