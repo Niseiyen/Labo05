@@ -21,7 +21,7 @@ public class ThumbnailView extends VBox implements ImageObserver {
         this.setPadding(new Insets(15));
         this.setAlignment(Pos.TOP_CENTER);
 
-        Label title = new Label("IMAGE SOURCE");
+        Label title = new Label("Image Source");
 
         this.canvas = new Canvas(150, 150);
 

@@ -26,11 +26,11 @@ public class ViewPortView extends VBox implements ImageObserver, ViewPortObserve
         this.setAlignment(Pos.CENTER);
         this.setStyle("-fx-border-color: #3498db; -fx-border-radius: 5; -fx-border-width: 2; -fx-background-color: white;");
 
-        Label title = new Label("Perspective : " + vp.getViewID());
+        Label title = new Label("Viewport : " + vp.getViewID());
 
         this.canvas = new Canvas(320, 320);
 
-        Button buttonUndo = new Button("↩ Annuler (Undo)");
+        Button buttonUndo = new Button("Undo");
         buttonUndo.setOnAction(e -> CommandManager.getInstance().retour(vp.getViewID()));
 
         this.getChildren().addAll(title, canvas, buttonUndo);
